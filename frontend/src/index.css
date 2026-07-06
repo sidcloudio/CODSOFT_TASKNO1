@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+  }
+}
+
+/* Custom Neon Gradients and Ambient Elements */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+}
+
+/* Glowing Neon Borders and Shadows */
+.border-neon-cyan {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.border-neon-purple {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+}
+
+.text-glow-indigo {
+  text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  @apply backdrop-blur-md border border-slate-200/50 bg-white/75 dark:border-slate-800/40 dark:bg-[#0f172a]/70 shadow-lg;
+}
+
+.glass-panel-heavy {
+  @apply backdrop-blur-xl border border-slate-200/80 bg-white/90 dark:border-slate-800/70 dark:bg-[#090e1a]/85 shadow-2xl;
+}
+
+.glass-input {
+  @apply backdrop-blur-sm border border-slate-300 bg-white/50 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all dark:border-slate-800 dark:bg-slate-900/40 dark:focus:border-cyan-400 dark:focus:ring-cyan-400;
+}
+
+/* Customized Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-cyan-500/50 dark:hover:bg-cyan-500/50 transition-colors;
+}
+
+/* Pulse animation for skeleton states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.light .skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Custom Gradient Text */
+.gradient-text-cyan-indigo {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 dark:from-cyan-400 dark:to-indigo-400;
+}
+
+.gradient-text-purple-pink {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-400 dark:to-pink-400;
+}
+
+.glow-orb {
+  filter: blur(100px);
+  pointer-events: none;
+}
