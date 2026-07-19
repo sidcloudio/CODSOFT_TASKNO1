@@ -1,2 +1,2 @@
-/api/*  https://neocartx-api.onrender.com/api/:splat  200
-/*      /index.html                                 200
+/api/* https://neocartx-api.onrender.com 200 
+/*  /index.html  200
